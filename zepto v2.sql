@@ -13,7 +13,7 @@ outOfStock BOOLEAN,
 quantity INTEGER
 );
 
---data exploration
+--Data exploration
 
 --count of rows
 select count(*) from zepto;
@@ -22,7 +22,7 @@ select count(*) from zepto;
 SELECT * FROM zepto
 LIMIT 10;
 
---null values
+--Finding null values
 SELECT * FROM zepto
 WHERE name IS NULL
 OR
@@ -59,9 +59,9 @@ GROUP BY name
 HAVING count(sku_id) > 1
 ORDER BY count(sku_id) DESC;
 
---data cleaning
+--Data cleaning
 
---products with price = 0
+--Removing row/values consisting products with price = 0
 SELECT * FROM zepto
 WHERE mrp = 0 OR discountedSellingPrice = 0;
 
@@ -75,7 +75,7 @@ discountedSellingPrice = discountedSellingPrice / 100.0;
 
 SELECT mrp, discountedSellingPrice FROM zepto;
 
---data analysis
+--Data analysis
 
 -- Q1. Find the top 10 best-value products based on the discount percentage.
 SELECT DISTINCT name, mrp, discountPercent
